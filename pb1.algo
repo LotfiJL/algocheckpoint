@@ -1,0 +1,84 @@
+PROCEDURE input_length()
+VAR
+a: INTEGER;
+BEGIN
+REPEAT
+    write("input data of set 1")
+    read(a)
+UNTIL (a>=1)
+
+END
+
+PROCEDURE fill_table(a: INTEGER ; set: ARRAY_OF INTEGER[] )
+VAR
+    i : INTEGER;
+
+BEGIN
+    FOR i FROM 0 TO a-1 DO
+        write ("input data to table")
+        read(set[i])
+    END_FOR
+END
+
+*/
+
+
+ALGORITHM SumDistinct
+VAR
+    set1: ARRAY_OF INTEGER[];
+    set2: ARRAY_OF INTEGER[];
+    set3: ARRAY_OF INTEGER[];
+    found : BOOLEAN;
+    i,j,sum: INTEGER =0 ;
+BEGIN
+
+found := flase;
+    L1 := input_length()
+    fill_table(L1 ;set1)
+    L2 := input_length()
+    fill_table(L2 ;set2)
+
+FOR i in set1
+    IF (set1[i] not in set2[]) THEN
+        set3[] := set3[]+i;
+    END_IF
+
+FOR j in set2
+    IF (set2[j] not in set1[]) THEN
+        set3[] := set3[]+j;
+    END_IF
+FOR i FROM 0 TO set3.length()  DO
+    sum :=sum+set3[i];
+END_FOR
+END_FOR
+
+while(i<L1)
+END
+
+/*ALGORITHM SumDistinct
+
+
+Sum: INTEGER := 0;
+i,j :INTEGER;
+set1, set2 : ARRAY_OF INTEGER[20];
+found : BOOLEAN;
+
+
+BEGIN
+
+FOR i FROM 0 TO set1.length-1   DO
+    found:=flase
+FOR j FROM 0 TO set2.length   DO
+    IF (set1[i]=set2[j]) THEN
+    found:=true;
+END_IF
+END_FOR
+    if (found=false)
+    sum=sum+set1[i]
+
+END_FOR
+
+
+
+
+END

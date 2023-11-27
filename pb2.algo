@@ -1,0 +1,30 @@
+PROCEDURE dot_product(v1, v2: ARRAY OF INTEGER): INTEGER
+VAR
+    dot: INTEGER = 0;
+    i: INTEGER = 0;
+BEGIN
+    IF (LENGTH(v1) != LENGTH(v2)) THEN
+        WRITE("produit scalaire non calculable");
+        RETURN -1;
+    END_IF
+    
+    WHILE (i < LENGTH(v1)) DO
+        dot := dot + v1[i] * v2[i];
+        i := i + 1;
+    END_WHILE
+    
+    RETURN dot; 
+END
+
+ALGORITHM orth_vectors
+VAR
+    v1, v2: ARRAY OF INTEGER; 
+    V: INTEGER;
+BEGIN
+    V := dot_product(v1, v2);
+    IF (V = 0) THEN
+        PRINT("vecteurs orthogonaux");
+    ELSE
+        PRINT("vecteurs non orthogonaux");
+    END_IF;
+END
